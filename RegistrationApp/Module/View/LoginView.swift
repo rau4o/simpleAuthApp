@@ -111,18 +111,18 @@ class LoginView: UIView {
         }
         
         iconImage.centerX(inView: self)
-        iconImage.anchor(top: safeAreaLayoutGuide.topAnchor, paddingTop: 92, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 37, height: 44)
+        iconImage.anchor(top: safeAreaLayoutGuide.topAnchor, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 37, height: 44)
         
         titleLabel.centerX(inView: self)
-        titleLabel.anchor(top: iconImage.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,paddingTop: 35, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 41)
+        titleLabel.anchor(top: iconImage.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,paddingTop: 25, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 41)
         
         descLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 44)
         
         stackView.anchor(top: descLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 40, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
-        dontHaveAccountButton.anchor(top: nil, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 55, paddingRight: 16, height: 20)
+        dontHaveAccountButton.anchor(top: nil, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 10, paddingRight: 16, height: 20)
         
-        loginButton.anchor(top: nil, left: leftAnchor, bottom: dontHaveAccountButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 32, paddingRight: 16, height: 56)
+        loginButton.anchor(top: nil, left: leftAnchor, bottom: dontHaveAccountButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 20, paddingRight: 16, height: 56)
     }
     
     // MARK: - Selectors

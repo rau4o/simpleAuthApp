@@ -1,20 +1,35 @@
-//
-//  CheckBox.swift
-//  RegistrationApp
-//
-//  Created by rau4o on 5/11/20.
-//  Copyright © 2020 rau4o. All rights reserved.
-//
+//CheckBox.swift
+/*
+ * LKCheckbox
+ * Created by penumutchu.prasad@gmail.com on 18/04/19
+ * is a product created by abnboys 
+ * For abnboys in the LKCheckbox in the LKCheckbox
+ * Here the permission is granted to this file with free of use anywhere in any iOS Projects.
+ * Copyright © 2019 abnboys.com. All rights reserved.
+*/
 
 import UIKit
+
+//https://github.com/BeauNouvelle/SimpleCheckbox/blob/master/checkbox/Checkbox.swift
 
 @IBDesignable
 open class CheckBox: UIControl {
     
+    ///Used to choose the style for the Checkbox
     public enum Style {
+        
+        /// ■
+        case square
+        /// ●
+        case circle
+        /// x
+        case cross
+        /// ✓
         case tick
     }
     
+    /// Shape of the outside box containing the checkmarks contents.
+    /// Used as a visual indication of where the user can tap.
     public enum BorderStyle {
         /// ▢
         case square
@@ -23,7 +38,8 @@ open class CheckBox: UIControl {
         /// ◯
         case rounded
     }
-    var style: Style = .tick
+    
+    var style: Style = .circle
     var borderStyle: BorderStyle = .roundedSquare(radius: 8)
     
     @IBInspectable
@@ -123,9 +139,17 @@ open class CheckBox: UIControl {
         context.strokePath()
         context.fillPath()
         
+        //When it is selected, depends on the style
+        //By using helper methods, draw the inner part of the component UI.
         if isChecked {
             
             switch self.style {
+            case .square:
+                self.drawInnerSquare(frame: newRect)
+            case .circle:
+                self.drawCircle(frame: newRect)
+            case .cross:
+                self.drawCross(frame: newRect)
             case .tick:
                 self.drawCheckMark(frame: newRect)
             }
@@ -141,6 +165,10 @@ open class CheckBox: UIControl {
         super.prepareForInterfaceBuilder()
         self.setNeedsDisplay()
     }
+    
+    //we override the following method,
+    //To increase the hit frame for this component
+    //Usaully check boxes are small in our app's UI, so we need more touchable area for its interaction
     open override func point(inside point: CGPoint, with event: UIEvent?) -> Bool {
         
         let relativeFrame = self.bounds
@@ -149,8 +177,10 @@ open class CheckBox: UIControl {
         return hitFrame.contains(point)
     }
     
+    //Draws tick inside the component
     func drawCheckMark(frame: CGRect) {
         
+        //// Bezier Drawing
         let bezierPath = UIBezierPath()
         bezierPath.move(to: CGPoint(x: frame.minX + 0.26000 * frame.width, y: frame.minY + 0.50000 * frame.height))
         bezierPath.addCurve(to: CGPoint(x: frame.minX + 0.42000 * frame.width, y: frame.minY + 0.62000 * frame.height), controlPoint1: CGPoint(x: frame.minX + 0.38000 * frame.width, y: frame.minY + 0.60000 * frame.height), controlPoint2: CGPoint(x: frame.minX + 0.42000 * frame.width, y: frame.minY + 0.62000 * frame.height))
@@ -162,11 +192,13 @@ open class CheckBox: UIControl {
         bezierPath.fill()
     }
     
+    //Draws circle inside the component
     func drawCircle(frame: CGRect) {
-
+        //// General Declarations
+        // This non-generic function dramatically improves compilation times of complex expressions.
         func fastFloor(_ x: CGFloat) -> CGFloat { return floor(x) }
         
-
+        //// Oval Drawing
         let ovalPath = UIBezierPath(ovalIn: CGRect(x: frame.minX + fastFloor(frame.width * 0.22000 + 0.5), y: frame.minY + fastFloor(frame.height * 0.22000 + 0.5), width: fastFloor(frame.width * 0.76000 + 0.5) - fastFloor(frame.width * 0.22000 + 0.5), height: fastFloor(frame.height * 0.78000 + 0.5) - fastFloor(frame.height * 0.22000 + 0.5)))
         checkmarkColor.setFill()
         ovalPath.fill()

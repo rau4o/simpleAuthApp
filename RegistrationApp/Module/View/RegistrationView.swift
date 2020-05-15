@@ -14,8 +14,10 @@ class RegistrationView: UIView {
     
     weak var delegate: RegistrationControllerProtocol?
     
+    // MARK: - if add tapGestureRecognizer checkBox will not working
+
     lazy private var tapGestureRecognizer: UITapGestureRecognizer = {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        let tap = UITapGestureRecognizer()
         return tap
     }()
     
@@ -32,7 +34,7 @@ class RegistrationView: UIView {
     
     private let descLabel: UILabel = {
         return UILabel(text: "Nec nihil affert partiendo ne, quo no iisque etiam tacimates sed conceptam.",
-                            font: .systemFont(ofSize: 17, weight: .medium),
+                            font: .systemFont(ofSize: 14, weight: .medium),
                             numberOfLines: 0,
                             textAlignment: .center,
                             textColor: UIColor.descColor)
@@ -40,19 +42,19 @@ class RegistrationView: UIView {
     
     lazy private var nameContainerView: UIView = {
         let view = UIView().inputContrainerView(textField: nameTextField)
-        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return view
     }()
     
     lazy private var emailContainerView: UIView = {
         let view = UIView().inputContrainerView(textField: emailTextField)
-        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return view
     }()
     
     lazy private var passwordContainerView: UIView = {
         let view = UIView().inputContrainerView(textField: passwordTextField)
-        view.heightAnchor.constraint(equalToConstant: 60).isActive = true
+        view.heightAnchor.constraint(equalToConstant: 50).isActive = true
         return view
     }()
     
@@ -77,7 +79,7 @@ class RegistrationView: UIView {
         return stack
     }()
     
-    private var checkBoxButton: CheckBox = {
+    var checkBoxButton: CheckBox = {
         let view = CheckBox()
         view.style = .tick
         view.borderStyle = .roundedSquare(radius: 0)
@@ -140,31 +142,25 @@ class RegistrationView: UIView {
         }
         
         iconImage.centerX(inView: self)
-        iconImage.anchor(top: safeAreaLayoutGuide.topAnchor, paddingTop: 92, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 37, height: 44)
+        iconImage.anchor(top: safeAreaLayoutGuide.topAnchor, paddingTop: 40, paddingLeft: 0, paddingBottom: 0, paddingRight: 0, width: 37, height: 44)
         
         titleLabel.centerX(inView: self)
-        titleLabel.anchor(top: iconImage.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,paddingTop: 35, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 41)
+        titleLabel.anchor(top: iconImage.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor,paddingTop: 20, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 41)
         
-        descLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 44)
+        descLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 10, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 46)
         
-        containerStackView.anchor(top: descLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 40, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
+        containerStackView.anchor(top: descLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 20, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
-        termStackView.anchor(top: containerStackView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 36, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, width: nil, height: 20)
+        termStackView.anchor(top: containerStackView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 25, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, width: nil, height: 20)
         
-        alreadyHaveAcoountButton.anchor(top: nil, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 55, paddingRight: 16, height: 20)
+        alreadyHaveAcoountButton.anchor(top: nil, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 10, paddingRight: 16, height: 20)
         
-        registrButton.anchor(top: nil, left: leftAnchor, bottom: alreadyHaveAcoountButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 32, paddingRight: 16, height: 56)
-        
-        addGestureRecognizer(tapGestureRecognizer)
+        registrButton.anchor(top: nil, left: leftAnchor, bottom: alreadyHaveAcoountButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 20, paddingRight: 16, height: 56)
     }
     
     // MARK: - Selectors
     
     @objc private func handleAlreadyHaveAccount(_ sender: UIButton) {
         delegate?.moveToLoginPage()
-    }
-    
-    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
-        self.endEditing(true)
     }
 }

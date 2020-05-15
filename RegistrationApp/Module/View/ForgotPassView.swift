@@ -25,7 +25,7 @@ class ForgotPassView: UIView {
     
     private let descLabel: UILabel = {
         return UILabel(text: "Mel ea numquam efficiendi appellantur, eu vix reque inermis propriae, animal scaevola.",
-                            font: .systemFont(ofSize: 17, weight: .medium),
+                            font: .systemFont(ofSize: 14, weight: .medium),
                             numberOfLines: 0,
                             textAlignment: .center,
                             textColor: UIColor.descColor)
@@ -73,7 +73,7 @@ class ForgotPassView: UIView {
         
         titleLabel.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 64, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 41)
         
-        descLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 44)
+        descLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 55)
         
         emailContainerView.anchor(top: descLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 40, paddingLeft: 10, paddingBottom: 0, paddingRight: 10, height: 60)
         
