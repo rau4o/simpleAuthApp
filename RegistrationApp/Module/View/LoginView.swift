@@ -14,6 +14,11 @@ class LoginView: UIView {
     
     weak var delegate: LoginControllerProtocol?
     
+    lazy private var tapGestureRecognizer: UITapGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        return tap
+    }()
+    
     private let iconImage: UIImageView = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "apple").withRenderingMode(.alwaysOriginal)
@@ -40,7 +45,7 @@ class LoginView: UIView {
     }()
     
     private let emailTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
+        return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false, keyboardType: .emailAddress)
     }()
     
     private lazy var passwordContainerView: UIView = {
@@ -72,7 +77,7 @@ class LoginView: UIView {
         let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15),NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         attributedTitle.append(NSAttributedString(string: "Create account", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         button.setAttributedTitle(attributedTitle, for: .normal)
-        button.addTarget(self, action: #selector(handleDontHaveAccount), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleDontHaveAccount(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -81,7 +86,7 @@ class LoginView: UIView {
         button.setTitle("Forgot Password?", for: .normal)
         button.setTitleColor(UIColor.mainBlue, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
-        button.addTarget(self, action: #selector(handleForgotPass), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleForgotPass(_:)), for: .touchUpInside)
         return button
     }()
     
@@ -118,17 +123,19 @@ class LoginView: UIView {
         dontHaveAccountButton.anchor(top: nil, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 55, paddingRight: 16, height: 20)
         
         loginButton.anchor(top: nil, left: leftAnchor, bottom: dontHaveAccountButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 32, paddingRight: 16, height: 56)
-        
-//        forgotPassButton.anchor(top: stackView.bottomAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 22, paddingLeft: 0, paddingBottom: 0, paddingRight: 16, width: 113, height: 18)
     }
     
     // MARK: - Selectors
     
-    @objc func handleDontHaveAccount() {
+    @objc func handleDontHaveAccount(_ sender: UIButton) {
         delegate?.moveToRegistrationPage()
     }
     
-    @objc private func handleForgotPass() {
+    @objc private func handleForgotPass(_ sender: UIButton) {
         delegate?.moveToForgotPass()
+    }
+    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        self.endEditing(true)
     }
 }

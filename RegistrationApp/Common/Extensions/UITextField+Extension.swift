@@ -9,11 +9,12 @@
 import UIKit
 
 extension UITextField {
-    func textField(withPlaceholder placeholder: String, isSecureTextEntry: Bool) -> UITextField {
+    func textField(withPlaceholder placeholder: String, isSecureTextEntry: Bool, keyboardType: UIKeyboardType = .default) -> UITextField {
         let tf = UITextField()
         tf.borderStyle = .none
         tf.font = UIFont.systemFont(ofSize: 16)
         tf.textColor = .black
+        tf.keyboardType = keyboardType
         tf.keyboardAppearance = .dark
         tf.isSecureTextEntry = isSecureTextEntry
         tf.attributedPlaceholder = NSAttributedString(string: placeholder, attributes: [NSAttributedString.Key.foregroundColor : UIColor.lightGray])

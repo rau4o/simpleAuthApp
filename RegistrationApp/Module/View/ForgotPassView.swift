@@ -14,6 +14,11 @@ class ForgotPassView: UIView {
     
     weak var delegate: ForgotPasswordProtocol?
     
+    lazy private var tapGestureRecognizer: UITapGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        return tap
+    }()
+    
     private let titleLabel: UILabel = {
         return UILabel(text: "Forgot Password?", font: .systemFont(ofSize: 34, weight: .bold), textAlignment: .center)
     }()
@@ -64,6 +69,8 @@ class ForgotPassView: UIView {
             addSubview($0)
         }
         
+        addGestureRecognizer(tapGestureRecognizer)
+        
         titleLabel.anchor(top: safeAreaLayoutGuide.topAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 64, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 41)
         
         descLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 44)
@@ -77,5 +84,9 @@ class ForgotPassView: UIView {
     
     @objc private func handleContinue() {
         delegate?.moveToLogin()
+    }
+    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        self.endEditing(true)
     }
 }

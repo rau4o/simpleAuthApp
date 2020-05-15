@@ -14,6 +14,11 @@ class RegistrationView: UIView {
     
     weak var delegate: RegistrationControllerProtocol?
     
+    lazy private var tapGestureRecognizer: UITapGestureRecognizer = {
+        let tap = UITapGestureRecognizer(target: self, action: #selector(handleTap(_:)))
+        return tap
+    }()
+    
     private let iconImage: UIImageView = {
         let image = UIImageView()
         image.image = #imageLiteral(resourceName: "apple").withRenderingMode(.alwaysOriginal)
@@ -56,15 +61,14 @@ class RegistrationView: UIView {
     }()
     
     private let emailTextField: UITextField = {
-        return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
-        
+        return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false, keyboardType: .emailAddress)
     }()
     
     private let passwordTextField: UITextField = {
         return UITextField().textField(withPlaceholder: "Password", isSecureTextEntry: true)
     }()
     
-    lazy private var stackView: UIStackView = {
+    lazy private var containerStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [nameContainerView,emailContainerView,passwordContainerView])
         stack.distribution = .fillEqually
         stack.axis = .vertical
@@ -73,7 +77,7 @@ class RegistrationView: UIView {
         return stack
     }()
     
-    lazy private var checkBoxButton: CheckBox = {
+    private var checkBoxButton: CheckBox = {
         let view = CheckBox()
         view.style = .tick
         view.borderStyle = .roundedSquare(radius: 0)
@@ -82,11 +86,12 @@ class RegistrationView: UIView {
     
     private let termButton: UIButton = {
         let button = UIButton(type: .system)
-        let attributedTitle = NSMutableAttributedString(string: "I agree with our? ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.lightGray])
+        let attributedTitle = NSMutableAttributedString(string: "I agree with our ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         attributedTitle.append(NSAttributedString(string: "Terms ", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         attributedTitle.append(NSAttributedString(string: "and ", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
         attributedTitle.append(NSAttributedString(string: "Conditions", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         button.setAttributedTitle(attributedTitle, for: .normal)
+        button.contentHorizontalAlignment = UIControl.ContentHorizontalAlignment.left
         return button
     }()
     
@@ -102,15 +107,15 @@ class RegistrationView: UIView {
         let attributedTitle = NSMutableAttributedString(string: "Already have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),NSAttributedString.Key.foregroundColor: UIColor.lightGray])
         attributedTitle.append(NSAttributedString(string: "Sign In", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         button.setAttributedTitle(attributedTitle, for: .normal)
-        button.addTarget(self, action: #selector(handleAlreadyHaveAccount), for: .touchUpInside)
+        button.addTarget(self, action: #selector(handleAlreadyHaveAccount(_:)), for: .touchUpInside)
         return button
     }()
     
-    lazy private var st: UIStackView = {
+    lazy private var termStackView: UIStackView = {
         let stack = UIStackView(arrangedSubviews: [checkBoxButton,termButton])
         stack.axis = .horizontal
         stack.distribution = .fill
-        stack.spacing = 0
+        stack.spacing = 10
         checkBoxButton.setDimension(height: 18, width: 18)
         return stack
     }()
@@ -130,7 +135,7 @@ class RegistrationView: UIView {
     // MARK: - Helper function
     
     private func layoutUI() {
-        [iconImage, titleLabel, descLabel, st, stackView, alreadyHaveAcoountButton, registrButton].forEach {
+        [iconImage, titleLabel, descLabel, containerStackView, termStackView, alreadyHaveAcoountButton, registrButton].forEach {
             addSubview($0)
         }
         
@@ -142,16 +147,24 @@ class RegistrationView: UIView {
         
         descLabel.anchor(top: titleLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 16, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, height: 44)
         
-        stackView.anchor(top: descLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 40, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
+        containerStackView.anchor(top: descLabel.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 40, paddingLeft: 10, paddingBottom: 0, paddingRight: 10)
         
-        st.anchor(top: stackView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 36, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, width: nil, height: 20)
+        termStackView.anchor(top: containerStackView.bottomAnchor, left: leftAnchor, bottom: nil, right: rightAnchor, paddingTop: 36, paddingLeft: 16, paddingBottom: 0, paddingRight: 16, width: nil, height: 20)
         
         alreadyHaveAcoountButton.anchor(top: nil, left: leftAnchor, bottom: safeAreaLayoutGuide.bottomAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 55, paddingRight: 16, height: 20)
         
         registrButton.anchor(top: nil, left: leftAnchor, bottom: alreadyHaveAcoountButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 32, paddingRight: 16, height: 56)
+        
+        addGestureRecognizer(tapGestureRecognizer)
     }
     
-    @objc private func handleAlreadyHaveAccount() {
+    // MARK: - Selectors
+    
+    @objc private func handleAlreadyHaveAccount(_ sender: UIButton) {
         delegate?.moveToLoginPage()
+    }
+    
+    @objc private func handleTap(_ sender: UITapGestureRecognizer) {
+        self.endEditing(true)
     }
 }

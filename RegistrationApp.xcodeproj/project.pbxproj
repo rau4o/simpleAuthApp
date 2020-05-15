@@ -107,7 +107,6 @@
 			isa = PBXGroup;
 			children = (
 				AEC9534324693C3B0068B6EE /* View */,
-				AEC9534224693C320068B6EE /* ViewModel */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -120,13 +119,6 @@
 				AEC9534524693C470068B6EE /* Extensions */,
 			);
 			path = Common;
-			sourceTree = "<group>";
-		};
-		AEC9534224693C320068B6EE /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		AEC9534324693C3B0068B6EE /* View */ = {
