@@ -44,10 +44,10 @@ class LoginController: UIViewController {
 
 extension LoginController: LoginControllerProtocol {
     func moveToForgotPass() {
-        navigationController?.pushViewController(self.registrationController, animated: true)
+        navigationController?.pushViewController(ForgotPasswordController.shared, animated: true)
     }
     
     func moveToRegistrationPage() {
-        navigationController?.pushViewController(ForgotPasswordController.shared, animated: true)
+        navigationController?.pushViewController(self.registrationController, animated: true)
     }
 }
