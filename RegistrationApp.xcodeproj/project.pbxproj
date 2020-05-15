@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		AE84C971246ED1A900F7166B /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84C970246ED1A900F7166B /* UILabel+Extension.swift */; };
 		AE84C975246ED43D00F7166B /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84C974246ED43D00F7166B /* Protocols.swift */; };
+		AE84C977246EDBB000F7166B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84C976246EDBB000F7166B /* UIColor+Extension.swift */; };
 		AEC9532B24693BA10068B6EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9532A24693BA10068B6EE /* AppDelegate.swift */; };
 		AEC9532D24693BA10068B6EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9532C24693BA10068B6EE /* SceneDelegate.swift */; };
 		AEC9532F24693BA10068B6EE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9532E24693BA10068B6EE /* ViewController.swift */; };
@@ -20,7 +21,6 @@
 		AEC9534924693C930068B6EE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9534824693C930068B6EE /* LoginView.swift */; };
 		AEC9534D24693DC80068B6EE /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9534C24693DC80068B6EE /* UITextField+Extension.swift */; };
 		AEC9534F246945DF0068B6EE /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9534E246945DF0068B6EE /* AuthButton.swift */; };
-		AEC953522469476B0068B6EE /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC953512469476B0068B6EE /* Constants.swift */; };
 		AEC95354246949AC0068B6EE /* RegistrationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC95353246949AC0068B6EE /* RegistrationController.swift */; };
 		AEC95356246949FA0068B6EE /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC95355246949FA0068B6EE /* RegistrationView.swift */; };
 		AEC953592469521F0068B6EE /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC953582469521F0068B6EE /* CheckBox.swift */; };
@@ -31,6 +31,7 @@
 /* Begin PBXFileReference section */
 		AE84C970246ED1A900F7166B /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		AE84C974246ED43D00F7166B /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		AE84C976246EDBB000F7166B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AEC9532724693BA10068B6EE /* RegistrationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegistrationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC9532A24693BA10068B6EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC9532C24693BA10068B6EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -44,7 +45,6 @@
 		AEC9534824693C930068B6EE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AEC9534C24693DC80068B6EE /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
 		AEC9534E246945DF0068B6EE /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
-		AEC953512469476B0068B6EE /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AEC95353246949AC0068B6EE /* RegistrationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationController.swift; sourceTree = "<group>"; };
 		AEC95355246949FA0068B6EE /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		AEC953582469521F0068B6EE /* CheckBox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 				AE84C973246ED3FE00F7166B /* Protocols */,
 				AEC95357246952130068B6EE /* CustomClass */,
 				AEC9534524693C470068B6EE /* Extensions */,
-				AEC953512469476B0068B6EE /* Constants.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -148,8 +147,8 @@
 			children = (
 				AEC9534624693C6D0068B6EE /* UIView+Extension.swift */,
 				AEC9534C24693DC80068B6EE /* UITextField+Extension.swift */,
-				AEC9534E246945DF0068B6EE /* AuthButton.swift */,
 				AE84C970246ED1A900F7166B /* UILabel+Extension.swift */,
+				AE84C976246EDBB000F7166B /* UIColor+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -158,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				AEC953582469521F0068B6EE /* CheckBox.swift */,
+				AEC9534E246945DF0068B6EE /* AuthButton.swift */,
 			);
 			path = CustomClass;
 			sourceTree = "<group>";
@@ -237,6 +237,7 @@
 				AEC95356246949FA0068B6EE /* RegistrationView.swift in Sources */,
 				AE84C971246ED1A900F7166B /* UILabel+Extension.swift in Sources */,
 				AEC9535D2469595E0068B6EE /* ForgotPassView.swift in Sources */,
+				AE84C977246EDBB000F7166B /* UIColor+Extension.swift in Sources */,
 				AEC9534924693C930068B6EE /* LoginView.swift in Sources */,
 				AEC9534F246945DF0068B6EE /* AuthButton.swift in Sources */,
 				AEC9532F24693BA10068B6EE /* ViewController.swift in Sources */,
@@ -247,7 +248,6 @@
 				AEC953592469521F0068B6EE /* CheckBox.swift in Sources */,
 				AEC9532D24693BA10068B6EE /* SceneDelegate.swift in Sources */,
 				AEC95354246949AC0068B6EE /* RegistrationController.swift in Sources */,
-				AEC953522469476B0068B6EE /* Constants.swift in Sources */,
 				AE84C975246ED43D00F7166B /* Protocols.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

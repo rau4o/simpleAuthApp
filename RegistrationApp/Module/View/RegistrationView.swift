@@ -30,7 +30,7 @@ class RegistrationView: UIView {
                             font: .systemFont(ofSize: 17, weight: .medium),
                             numberOfLines: 0,
                             textAlignment: .center,
-                            textColor: UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6))
+                            textColor: UIColor.descColor)
     }()
     
     lazy private var nameContainerView: UIView = {
@@ -83,9 +83,9 @@ class RegistrationView: UIView {
     private let termButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "I agree with our? ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        attributedTitle.append(NSAttributedString(string: "Terms ", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: Constants.mainBlue]))
+        attributedTitle.append(NSAttributedString(string: "Terms ", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         attributedTitle.append(NSAttributedString(string: "and ", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.lightGray]))
-        attributedTitle.append(NSAttributedString(string: "Conditions", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: Constants.mainBlue]))
+        attributedTitle.append(NSAttributedString(string: "Conditions", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         return button
     }()
@@ -100,7 +100,7 @@ class RegistrationView: UIView {
     private let alreadyHaveAcoountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "Already have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        attributedTitle.append(NSAttributedString(string: "Sign In", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16),NSAttributedString.Key.foregroundColor: Constants.mainBlue]))
+        attributedTitle.append(NSAttributedString(string: "Sign In", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 16),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(handleAlreadyHaveAccount), for: .touchUpInside)
         return button

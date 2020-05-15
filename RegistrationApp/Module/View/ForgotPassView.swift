@@ -23,7 +23,7 @@ class ForgotPassView: UIView {
                             font: .systemFont(ofSize: 17, weight: .medium),
                             numberOfLines: 0,
                             textAlignment: .center,
-                            textColor: UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6))
+                            textColor: UIColor.descColor)
     }()
     
     private lazy var emailContainerView: UIView = {

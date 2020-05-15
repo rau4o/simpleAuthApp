@@ -30,7 +30,7 @@ class LoginView: UIView {
                             font: .systemFont(ofSize: 17, weight: .medium),
                             numberOfLines: 0,
                             textAlignment: .center,
-                            textColor: UIColor(red: 60/255, green: 60/255, blue: 67/255, alpha: 0.6))
+                            textColor: UIColor.descColor)
     }()
     
     private lazy var emailContainerView: UIView = {
@@ -44,7 +44,7 @@ class LoginView: UIView {
     }()
     
     private lazy var passwordContainerView: UIView = {
-        return UIView().inputContrainerView(textField: passwordTextField)
+        return UIView().inputContrainerView(textField: passwordTextField, button: forgotPassButton)
     }()
     
     private let passwordTextField: UITextField = {
@@ -70,7 +70,7 @@ class LoginView: UIView {
     private let dontHaveAccountButton: UIButton = {
         let button = UIButton(type: .system)
         let attributedTitle = NSMutableAttributedString(string: "Don't have an account?  ", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 15),NSAttributedString.Key.foregroundColor: UIColor.lightGray])
-        attributedTitle.append(NSAttributedString(string: "Create account", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15),NSAttributedString.Key.foregroundColor: Constants.mainBlue]))
+        attributedTitle.append(NSAttributedString(string: "Create account", attributes: [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 15),NSAttributedString.Key.foregroundColor: UIColor.mainBlue]))
         button.setAttributedTitle(attributedTitle, for: .normal)
         button.addTarget(self, action: #selector(handleDontHaveAccount), for: .touchUpInside)
         return button
@@ -79,7 +79,7 @@ class LoginView: UIView {
     private let forgotPassButton: UIButton = {
         let button = UIButton()
         button.setTitle("Forgot Password?", for: .normal)
-        button.setTitleColor(Constants.mainBlue, for: .normal)
+        button.setTitleColor(UIColor.mainBlue, for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13, weight: .medium)
         button.addTarget(self, action: #selector(handleForgotPass), for: .touchUpInside)
         return button
@@ -101,7 +101,7 @@ class LoginView: UIView {
     
     private func layoutUI() {
         
-        [iconImage, titleLabel, descLabel, stackView, dontHaveAccountButton, loginButton, forgotPassButton].forEach {
+        [iconImage, titleLabel, descLabel, stackView, dontHaveAccountButton, loginButton].forEach {
             addSubview($0)
         }
         
@@ -119,7 +119,7 @@ class LoginView: UIView {
         
         loginButton.anchor(top: nil, left: leftAnchor, bottom: dontHaveAccountButton.topAnchor, right: rightAnchor, paddingTop: 0, paddingLeft: 16, paddingBottom: 32, paddingRight: 16, height: 56)
         
-        forgotPassButton.anchor(top: stackView.bottomAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 22, paddingLeft: 0, paddingBottom: 0, paddingRight: 16, width: 113, height: 18)
+//        forgotPassButton.anchor(top: stackView.bottomAnchor, left: nil, bottom: nil, right: rightAnchor, paddingTop: 22, paddingLeft: 0, paddingBottom: 0, paddingRight: 16, width: 113, height: 18)
     }
     
     // MARK: - Selectors

@@ -10,7 +10,7 @@ import UIKit
 
 extension UIView {
     
-    func inputContrainerView( textField: UITextField? = nil) -> UIView {
+    func inputContrainerView( textField: UITextField? = nil, button: UIButton? = nil) -> UIView {
         let view = UIView()
         
         if let textField = textField {
@@ -24,6 +24,11 @@ extension UIView {
         view.addSubview(separatorView)
         separatorView.anchor(left: view.leftAnchor, bottom: view.bottomAnchor, right: view.rightAnchor, paddingLeft: 8, height: 0.7)
         
+        if let button = button {
+            view.addSubview(button)
+            button.centerY(inView: view)
+            button.anchor(bottom: view.bottomAnchor, right: view.rightAnchor, paddingBottom: 8, paddingRight: 8)
+        }
         return view
     }
     
