@@ -10,7 +10,7 @@ import FirebaseAuth
 
 class RegistrationViewModel {
     
-    var delegate: RegistrationControllerProtocol?
+    weak var delegate: RegistrationControllerProtocol?
     
     func createUser(name: String, email: String, password: String) {
         delegate?.startActivityIndicator()

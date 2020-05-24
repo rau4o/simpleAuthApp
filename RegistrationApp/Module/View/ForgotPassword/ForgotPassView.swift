@@ -37,7 +37,7 @@ class ForgotPassView: UIView {
         return view
     }()
     
-    private let emailTextField: UITextField = {
+    let emailTextField: UITextField = {
         return UITextField().textField(withPlaceholder: "Email", isSecureTextEntry: false)
     }()
     
@@ -83,7 +83,7 @@ class ForgotPassView: UIView {
     // MARK: - Selectors
     
     @objc private func handleContinue() {
-        delegate?.moveToLogin()
+        delegate?.doneResetPassword()
     }
     
     @objc private func handleTap(_ sender: UITapGestureRecognizer) {

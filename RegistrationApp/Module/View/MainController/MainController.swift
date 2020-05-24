@@ -15,12 +15,29 @@ class MainController: UIViewController {
     
     var user: AuthDataResult?
     var mainView = MainView()
+    var delegate: MainControllerProtocol?
+    var viewModel = MainViewModel()
     
     // MARK: - Life Cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         initialSetup()
+    }
+}
+
+extension MainController: MainControllerProtocol {
+    
+    func doneSignOut() {
+        viewModel.signOut()
+    }
+    
+    func dismissVC() {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    func showErrorMessage(error: Error?) {
+        showMessage(title: "Error", message: error?.localizedDescription)
     }
 }
 
@@ -33,6 +50,12 @@ private extension MainController {
         configureNavBar()
         layoutUI()
         displayName()
+        activateDelegates()
+    }
+    
+    private func activateDelegates() {
+        mainView.delegate = self
+        viewModel.delegate = self
     }
     
     private func configureNavBar() {

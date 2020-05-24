@@ -29,4 +29,13 @@ protocol RegistrationControllerProtocol: class {
 
 protocol ForgotPasswordProtocol: class {
     func moveToLogin()
+    func showMessageSuccess()
+    func showMessageFail(error: Error?)
+    func doneResetPassword()
+}
+
+protocol MainControllerProtocol: class {
+    func dismissVC()
+    func showErrorMessage(error: Error?)
+    func doneSignOut()
 }

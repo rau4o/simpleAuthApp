@@ -6,11 +6,11 @@
 //  Copyright © 2020 rau4o. All rights reserved.
 //
 
-import FirebaseAuth
+import Firebase
 
 class LoginViewModel {
     
-    var delegate: LoginControllerProtocol?
+    weak var delegate: LoginControllerProtocol?
     
     func signIn(email: String, password: String) {
         self.delegate?.startActivityIndicator()

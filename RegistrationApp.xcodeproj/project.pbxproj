@@ -34,7 +34,25 @@
 		AEC95356246949FA0068B6EE /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC95355246949FA0068B6EE /* RegistrationView.swift */; };
 		AEC9535B2469592C0068B6EE /* ForgotPasswordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9535A2469592C0068B6EE /* ForgotPasswordController.swift */; };
 		AEC9535D2469595E0068B6EE /* ForgotPassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9535C2469595E0068B6EE /* ForgotPassView.swift */; };
+		AEDE566A247A83B300A3476E /* Pods_RegistrationApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE5654247A83B300A3476E /* Pods_RegistrationApp.framework */; };
+		AEDE566B247A83B300A3476E /* Pods_RegistrationApp.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = AEDE5654247A83B300A3476E /* Pods_RegistrationApp.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		AEDE5670247AB50E00A3476E /* ForgotPasswordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE566F247AB50E00A3476E /* ForgotPasswordViewModel.swift */; };
+		AEDE5672247ABD3D00A3476E /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEDE5671247ABD3D00A3476E /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AEDE566E247A83B300A3476E /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				AEDE566B247A83B300A3476E /* Pods_RegistrationApp.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		262A55AE81F25784EAB11B57 /* Pods-RegistrationApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RegistrationApp.debug.xcconfig"; path = "Target Support Files/Pods-RegistrationApp/Pods-RegistrationApp.debug.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +86,20 @@
 		AEC95355246949FA0068B6EE /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		AEC9535A2469592C0068B6EE /* ForgotPasswordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordController.swift; sourceTree = "<group>"; };
 		AEC9535C2469595E0068B6EE /* ForgotPassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPassView.swift; sourceTree = "<group>"; };
+		AEDE564A247A83B300A3476E /* FBLPromises.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FBLPromises.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE564B247A83B300A3476E /* FirebaseAuth.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseAuth.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE564C247A83B300A3476E /* FirebaseCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE564D247A83B300A3476E /* FirebaseCoreDiagnostics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseCoreDiagnostics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE564E247A83B300A3476E /* FirebaseInstallations.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FirebaseInstallations.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE564F247A83B300A3476E /* GoogleDataTransport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleDataTransport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE5650247A83B300A3476E /* GoogleDataTransportCCTSupport.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleDataTransportCCTSupport.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE5651247A83B300A3476E /* GoogleUtilities.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GoogleUtilities.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE5652247A83B300A3476E /* GTMSessionFetcher.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = GTMSessionFetcher.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE5653247A83B300A3476E /* nanopb.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = nanopb.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE5654247A83B300A3476E /* Pods_RegistrationApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Pods_RegistrationApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE5655247A83B300A3476E /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AEDE566F247AB50E00A3476E /* ForgotPasswordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewModel.swift; sourceTree = "<group>"; };
+		AEDE5671247ABD3D00A3476E /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEDE566A247A83B300A3476E /* Pods_RegistrationApp.framework in Frameworks */,
 				1503CED2FEED03C4BA73DEB3 /* Pods_RegistrationApp.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -94,6 +127,18 @@
 		809DDDE34DBB0D5767C16DDA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AEDE564A247A83B300A3476E /* FBLPromises.framework */,
+				AEDE564B247A83B300A3476E /* FirebaseAuth.framework */,
+				AEDE564C247A83B300A3476E /* FirebaseCore.framework */,
+				AEDE564D247A83B300A3476E /* FirebaseCoreDiagnostics.framework */,
+				AEDE564E247A83B300A3476E /* FirebaseInstallations.framework */,
+				AEDE564F247A83B300A3476E /* GoogleDataTransport.framework */,
+				AEDE5650247A83B300A3476E /* GoogleDataTransportCCTSupport.framework */,
+				AEDE5651247A83B300A3476E /* GoogleUtilities.framework */,
+				AEDE5652247A83B300A3476E /* GTMSessionFetcher.framework */,
+				AEDE5653247A83B300A3476E /* nanopb.framework */,
+				AEDE5654247A83B300A3476E /* Pods_RegistrationApp.framework */,
+				AEDE5655247A83B300A3476E /* SnapKit.framework */,
 				85DDFB4682F184EE5E70407A /* Pods_RegistrationApp.framework */,
 			);
 			name = Frameworks;
@@ -112,6 +157,8 @@
 			children = (
 				AEC9360F247839E900EEBDA7 /* RegistrationViewModel.swift */,
 				AEC9361A2479344700EEBDA7 /* LoginViewModel.swift */,
+				AEDE566F247AB50E00A3476E /* ForgotPasswordViewModel.swift */,
+				AEDE5671247ABD3D00A3476E /* MainViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -155,13 +202,10 @@
 			children = (
 				AEC9534124693C2A0068B6EE /* Common */,
 				AEC9534024693C200068B6EE /* Module */,
-				AEC9532A24693BA10068B6EE /* AppDelegate.swift */,
-				AEC9532C24693BA10068B6EE /* SceneDelegate.swift */,
-				AEC9533024693BA10068B6EE /* Main.storyboard */,
-				AEC9533324693BA40068B6EE /* Assets.xcassets */,
-				AEC9533524693BA40068B6EE /* LaunchScreen.storyboard */,
+				AEDE5675247AC2B800A3476E /* GoogleService-Info */,
+				AEDE5674247AC2A100A3476E /* Storyboard */,
+				AEDE5673247AC28F00A3476E /* AppDelegate */,
 				AEC9533824693BA40068B6EE /* Info.plist */,
-				AEC9360B2478371700EEBDA7 /* GoogleService-Info.plist */,
 			);
 			path = RegistrationApp;
 			sourceTree = "<group>";
@@ -255,6 +299,33 @@
 			path = MainController;
 			sourceTree = "<group>";
 		};
+		AEDE5673247AC28F00A3476E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				AEC9533324693BA40068B6EE /* Assets.xcassets */,
+				AEC9532A24693BA10068B6EE /* AppDelegate.swift */,
+				AEC9532C24693BA10068B6EE /* SceneDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		AEDE5674247AC2A100A3476E /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				AEC9533024693BA10068B6EE /* Main.storyboard */,
+				AEC9533524693BA40068B6EE /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		AEDE5675247AC2B800A3476E /* GoogleService-Info */ = {
+			isa = PBXGroup;
+			children = (
+				AEC9360B2478371700EEBDA7 /* GoogleService-Info.plist */,
+			);
+			path = "GoogleService-Info";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -267,6 +338,7 @@
 				AEC9532424693BA10068B6EE /* Frameworks */,
 				AEC9532524693BA10068B6EE /* Resources */,
 				4AB7AF09C7D2B767CDE400BE /* [CP] Embed Pods Frameworks */,
+				AEDE566E247A83B300A3476E /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -390,9 +462,11 @@
 				AEC9532B24693BA10068B6EE /* AppDelegate.swift in Sources */,
 				AEC9534724693C6D0068B6EE /* UIView+Extension.swift in Sources */,
 				AEC9361224783C1600EEBDA7 /* Extension+String.swift in Sources */,
+				AEDE5670247AB50E00A3476E /* ForgotPasswordViewModel.swift in Sources */,
 				AEC9532D24693BA10068B6EE /* SceneDelegate.swift in Sources */,
 				AEC95354246949AC0068B6EE /* RegistrationController.swift in Sources */,
 				AE84C975246ED43D00F7166B /* Protocols.swift in Sources */,
+				AEDE5672247ABD3D00A3476E /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -546,7 +620,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = APS.RegistrationApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -565,7 +639,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = APS.RegistrationApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 5.0;
+				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;

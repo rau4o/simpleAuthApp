@@ -7,8 +7,6 @@
 //
 
 import UIKit
-import RxSwift
-import RxCocoa
 import Firebase
 
 class RegistrationController: UIViewController {
@@ -23,8 +21,6 @@ class RegistrationController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        registrationView.delegate = self
-        viewModel.delegate = self
         initialSetup()
         activityIndicator.stopAnimating()
     }
@@ -34,6 +30,8 @@ class RegistrationController: UIViewController {
         navigationController?.navigationBar.isHidden = true
     }
 }
+
+// MARK: - Protocols
 
 extension RegistrationController: RegistrationControllerProtocol {
     func doneRegistr() {
@@ -60,11 +58,19 @@ extension RegistrationController: RegistrationControllerProtocol {
     }
 }
     
+// MARK: - LayoutUI
+
 private extension RegistrationController {
     
     func initialSetup() {
         layoutUI()
         setupIndicatorView()
+        activateDelegates()
+    }
+    
+    private func activateDelegates() {
+        registrationView.delegate = self
+        viewModel.delegate = self
     }
     
     private func setupIndicatorView() {

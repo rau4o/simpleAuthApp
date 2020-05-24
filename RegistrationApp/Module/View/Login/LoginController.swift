@@ -23,8 +23,6 @@ class LoginController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginView.delegate = self
-        viewModel.delegate = self
         initialSetup()
     }
     
@@ -78,13 +76,19 @@ private extension LoginController {
         layoutUI()
         configureNavbar()
         activityIndicator.stopAnimating()
+        activateDelegates()
     }
     
-    func configureNavbar() {
+    private func configureNavbar() {
         navigationController?.navigationBar.isHidden = true
     }
     
-    func layoutUI() {
+    private func activateDelegates() {
+        loginView.delegate = self
+        viewModel.delegate = self
+    }
+    
+    private func layoutUI() {
         [loginView, activityIndicator].forEach {
             view.addSubview($0)
         }
