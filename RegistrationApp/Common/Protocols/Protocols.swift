@@ -7,14 +7,24 @@
 //
 
 import Foundation
+import FirebaseAuth
 
 protocol LoginControllerProtocol: class {
+    func moveToMain(user: AuthDataResult)
     func moveToForgotPass()
     func moveToRegistrationPage()
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func doneLogin()
+    func showMessage(error: Error?)
 }
 
 protocol RegistrationControllerProtocol: class {
     func moveToLoginPage()
+    func startActivityIndicator()
+    func stopActivityIndicator()
+    func doneRegistr()
+    func showMessage(error: Error?)
 }
 
 protocol ForgotPasswordProtocol: class {

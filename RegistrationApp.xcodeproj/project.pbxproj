@@ -13,6 +13,13 @@
 		AE84C977246EDBB000F7166B /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE84C976246EDBB000F7166B /* UIColor+Extension.swift */; };
 		AEC72299246F01CB004CA9A7 /* CheckBox.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72298246F01CB004CA9A7 /* CheckBox.swift */; };
 		AEC9360C2478371700EEBDA7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = AEC9360B2478371700EEBDA7 /* GoogleService-Info.plist */; };
+		AEC9360E2478398200EEBDA7 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9360D2478398200EEBDA7 /* User.swift */; };
+		AEC93610247839E900EEBDA7 /* RegistrationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9360F247839E900EEBDA7 /* RegistrationViewModel.swift */; };
+		AEC9361224783C1600EEBDA7 /* Extension+String.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9361124783C1600EEBDA7 /* Extension+String.swift */; };
+		AEC93615247842FE00EEBDA7 /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC93614247842FE00EEBDA7 /* Alert.swift */; };
+		AEC9361724790CE400EEBDA7 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9361624790CE400EEBDA7 /* MainController.swift */; };
+		AEC9361924790CFB00EEBDA7 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9361824790CFB00EEBDA7 /* MainView.swift */; };
+		AEC9361B2479344700EEBDA7 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9361A2479344700EEBDA7 /* LoginViewModel.swift */; };
 		AEC9532B24693BA10068B6EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9532A24693BA10068B6EE /* AppDelegate.swift */; };
 		AEC9532D24693BA10068B6EE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC9532C24693BA10068B6EE /* SceneDelegate.swift */; };
 		AEC9533224693BA10068B6EE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AEC9533024693BA10068B6EE /* Main.storyboard */; };
@@ -38,6 +45,13 @@
 		AE84C976246EDBB000F7166B /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		AEC72298246F01CB004CA9A7 /* CheckBox.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckBox.swift; sourceTree = "<group>"; };
 		AEC9360B2478371700EEBDA7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		AEC9360D2478398200EEBDA7 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		AEC9360F247839E900EEBDA7 /* RegistrationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewModel.swift; sourceTree = "<group>"; };
+		AEC9361124783C1600EEBDA7 /* Extension+String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+String.swift"; sourceTree = "<group>"; };
+		AEC93614247842FE00EEBDA7 /* Alert.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
+		AEC9361624790CE400EEBDA7 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		AEC9361824790CFB00EEBDA7 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		AEC9361A2479344700EEBDA7 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AEC9532724693BA10068B6EE /* RegistrationApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RegistrationApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AEC9532A24693BA10068B6EE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AEC9532C24693BA10068B6EE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +110,8 @@
 		AEC936092478368300EEBDA7 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				AEC9360F247839E900EEBDA7 /* RegistrationViewModel.swift */,
+				AEC9361A2479344700EEBDA7 /* LoginViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -103,8 +119,17 @@
 		AEC9360A2478368600EEBDA7 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				AEC9360D2478398200EEBDA7 /* User.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		AEC93613247842AB00EEBDA7 /* Alerts */ = {
+			isa = PBXGroup;
+			children = (
+				AEC93614247842FE00EEBDA7 /* Alert.swift */,
+			);
+			path = Alerts;
 			sourceTree = "<group>";
 		};
 		AEC9531E24693BA10068B6EE = {
@@ -154,6 +179,7 @@
 		AEC9534124693C2A0068B6EE /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				AEC93613247842AB00EEBDA7 /* Alerts */,
 				AE84C973246ED3FE00F7166B /* Protocols */,
 				AEC95357246952130068B6EE /* CustomClass */,
 				AEC9534524693C470068B6EE /* Extensions */,
@@ -164,12 +190,10 @@
 		AEC9534324693C3B0068B6EE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				AEC9533E24693BD20068B6EE /* LoginController.swift */,
-				AEC9534824693C930068B6EE /* LoginView.swift */,
-				AEC95353246949AC0068B6EE /* RegistrationController.swift */,
-				AEC95355246949FA0068B6EE /* RegistrationView.swift */,
-				AEC9535A2469592C0068B6EE /* ForgotPasswordController.swift */,
-				AEC9535C2469595E0068B6EE /* ForgotPassView.swift */,
+				AEDE5649247A80C400A3476E /* MainController */,
+				AEDE5648247A80B400A3476E /* ForgotPassword */,
+				AEDE5647247A80A700A3476E /* Registration */,
+				AEDE5646247A809E00A3476E /* Login */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -181,6 +205,7 @@
 				AEC9534C24693DC80068B6EE /* UITextField+Extension.swift */,
 				AE84C970246ED1A900F7166B /* UILabel+Extension.swift */,
 				AE84C976246EDBB000F7166B /* UIColor+Extension.swift */,
+				AEC9361124783C1600EEBDA7 /* Extension+String.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -192,6 +217,42 @@
 				AEC9534E246945DF0068B6EE /* AuthButton.swift */,
 			);
 			path = CustomClass;
+			sourceTree = "<group>";
+		};
+		AEDE5646247A809E00A3476E /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AEC9533E24693BD20068B6EE /* LoginController.swift */,
+				AEC9534824693C930068B6EE /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AEDE5647247A80A700A3476E /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				AEC95353246949AC0068B6EE /* RegistrationController.swift */,
+				AEC95355246949FA0068B6EE /* RegistrationView.swift */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
+		AEDE5648247A80B400A3476E /* ForgotPassword */ = {
+			isa = PBXGroup;
+			children = (
+				AEC9535A2469592C0068B6EE /* ForgotPasswordController.swift */,
+				AEC9535C2469595E0068B6EE /* ForgotPassView.swift */,
+			);
+			path = ForgotPassword;
+			sourceTree = "<group>";
+		};
+		AEDE5649247A80C400A3476E /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				AEC9361624790CE400EEBDA7 /* MainController.swift */,
+				AEC9361824790CFB00EEBDA7 /* MainView.swift */,
+			);
+			path = MainController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -311,9 +372,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEC9535B2469592C0068B6EE /* ForgotPasswordController.swift in Sources */,
+				AEC9361924790CFB00EEBDA7 /* MainView.swift in Sources */,
+				AEC9361B2479344700EEBDA7 /* LoginViewModel.swift in Sources */,
+				AEC93610247839E900EEBDA7 /* RegistrationViewModel.swift in Sources */,
 				AEC95356246949FA0068B6EE /* RegistrationView.swift in Sources */,
 				AE84C971246ED1A900F7166B /* UILabel+Extension.swift in Sources */,
+				AEC9361724790CE400EEBDA7 /* MainController.swift in Sources */,
 				AEC9535D2469595E0068B6EE /* ForgotPassView.swift in Sources */,
+				AEC93615247842FE00EEBDA7 /* Alert.swift in Sources */,
+				AEC9360E2478398200EEBDA7 /* User.swift in Sources */,
 				AE84C977246EDBB000F7166B /* UIColor+Extension.swift in Sources */,
 				AEC72299246F01CB004CA9A7 /* CheckBox.swift in Sources */,
 				AEC9534924693C930068B6EE /* LoginView.swift in Sources */,
@@ -322,6 +389,7 @@
 				AEC9533F24693BD20068B6EE /* LoginController.swift in Sources */,
 				AEC9532B24693BA10068B6EE /* AppDelegate.swift in Sources */,
 				AEC9534724693C6D0068B6EE /* UIView+Extension.swift in Sources */,
+				AEC9361224783C1600EEBDA7 /* Extension+String.swift in Sources */,
 				AEC9532D24693BA10068B6EE /* SceneDelegate.swift in Sources */,
 				AEC95354246949AC0068B6EE /* RegistrationController.swift in Sources */,
 				AE84C975246ED43D00F7166B /* Protocols.swift in Sources */,
